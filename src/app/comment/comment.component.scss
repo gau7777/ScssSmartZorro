@@ -1,0 +1,276 @@
+@font-face {
+    font-family: HelveticaFont;
+    src: url(helveticamediumcondensedplain.otf);
+}
+
+@font-face {
+    font-family: HelveticaFontGray;
+    src: url(helveticaneue-light-001.ttf);
+}
+
+@mixin comment-info-txt($fontfamily, $fontsize) {
+    font-family: $fontfamily;
+    font-size: $fontsize;
+}
+
+@mixin comment-icon-styles($color, $background, $border) {
+    color: $color;
+    background: $background;
+    border: $border;
+}
+
+@mixin detractors-style($color, $background, $bradius, $padding) {
+    color: $color;
+    background: $background;
+    border-radius: $bradius;
+    padding: $padding;
+}
+
+@mixin comment-style($color, $padtop, $padleft) {
+    color: $color;
+    padding-top: $padtop;
+    padding-left: $padleft;
+}
+
+@mixin icon-style {
+    background: gainsboro;
+    border-radius: 3px;
+    margin-right: 3px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .fixed-comment-filter {
+        .ant-col-8 {
+            width: 41.333333%;
+        }
+        .ant-col-2 {
+            width: 27.333333%;
+        }
+        .anticon-filter {
+            padding-left: 3px;
+            margin-right: 5px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .anticon-download {
+            padding-left: 4px;
+            margin-right: 5px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .filter-icon,
+        .download-icon {
+            @include icon-style();
+        }
+        .filter-icon {
+            padding-left: 3px;
+        }
+    }
+    .main-comp-div {
+        .notify-div {
+            overflow: auto;
+            overflow-x: hidden;
+            height: 70vh;
+        }
+    }
+}
+
+@media screen and (min-width: 1260px) {
+    .filter-icon {
+        padding-left: 5px;
+        background: gainsboro;
+        border-radius: 3px;
+        margin-right: 4px;
+    }
+    .filter-i {
+        margin-right: 4px;
+    }
+    .download-icon {
+        padding: 0 5px;
+        background: gainsboro;
+        border-radius: 3px;
+    }
+    .fixed-comment-filter {
+        .ant-col-2 {
+            width: 10.333333%;
+        }
+    }
+    .main-comp-div {
+        .notify-div {
+            overflow: auto;
+            overflow-x: hidden;
+            height: 70vh;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .comment-info {
+        padding-left: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .comment-info {
+        padding-left: 21px;
+    }
+}
+
+.main-comp-div {
+    padding: 0 50px;
+    @media (min-width: 320px) and (max-width: 480px) {
+        padding: 0 10px;
+    }
+    .fixed-comment-filter {
+        position: sticky;
+        top: 0px;
+        z-index: 1;
+        background: #f0f2f5;
+        .dashbooard-title-padding {
+            padding-top: 14px;
+        }
+        .filter-comment {
+            .filter-padding {
+                font-size: 15px;
+                text-align: right;
+                margin-top: 4px;
+            }
+        }
+        .anticon-filter:hover {
+            cursor: pointer;
+        }
+        .anticon-download:hover {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    .notification-div {
+        background: white;
+        margin-top: 10px;
+        &.promotors {
+            .comment-count-icon-one {
+                @include comment-icon-styles(#1eb45b, rgba(30, 180, 91, .18), 2px solid #1eb45b);
+            }
+            .comment-count-icon-two {
+                @include comment-icon-styles(#1eb45b, rgba(30, 180, 91, .18), 2px solid #1eb45b);
+            }
+            .comment-count-icon-three {
+                @include comment-icon-styles(#1eb45b, rgba(30, 180, 91, .18), 2px solid #1eb45b);
+            }
+            .detractors-color-red {
+                @include detractors-style(#1eb45b, rgba(30, 180, 91, .18), 4px, 6px);
+            }
+            .detractors-color-green {
+                @include detractors-style(#1eb45b, rgba(30, 180, 91, .18), 4px, 6px);
+            }
+            .detractors-color-orange {
+                @include detractors-style(#1eb45b, rgba(30, 180, 91, .18), 4px, 6px);
+            }
+        }
+        &.passive {
+            .comment-count-icon-one {
+                @include comment-icon-styles(#ff8d09, rgba(255, 141, 9, .18), 2px solid #ff8d09);
+            }
+            .comment-count-icon-two {
+                @include comment-icon-styles(#ff8d09, rgba(255, 141, 9, .18), 2px solid #ff8d09);
+            }
+            .comment-count-icon-three {
+                @include comment-icon-styles(#ff8d09, rgba(255, 141, 9, .18), 2px solid #ff8d09);
+            }
+            .detractors-color-red {
+                @include detractors-style(#ff8d09, rgba(255, 141, 9, .18), 4px, 6px);
+            }
+            .detractors-color-green {
+                @include detractors-style(#ff8d09, rgba(255, 141, 9, .18), 4px, 6px);
+            }
+            .detractors-color-orange {
+                @include detractors-style(#ff8d09, rgba(255, 141, 9, .18), 4px, 6px);
+            }
+        }
+        &.detractors {
+            .comment-count-icon-one {
+                @include comment-icon-styles(#e80015, rgba(232, 0, 21, .18), 2px solid #e80015);
+            }
+            .comment-count-icon-two {
+                @include comment-icon-styles(#e80015, rgba(232, 0, 21, .18), 2px solid #e80015);
+            }
+            .comment-count-icon-three {
+                @include comment-icon-styles(#e80015, rgba(232, 0, 21, .18), 2px solid #e80015);
+            }
+            .detractors-color-red {
+                @include detractors-style(#e80015, rgba(232, 0, 21, .18), 4px, 6px);
+            }
+            .detractors-color-green {
+                @include detractors-style(#e80015, rgba(232, 0, 21, .18), 4px, 6px);
+            }
+            .detractors-color-orange {
+                @include detractors-style(#e80015, rgba(232, 0, 21, .18), 4px, 6px);
+            }
+        }
+        .comment-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            height: 40px;
+            width: 40px;
+            border: solid;
+            border-radius: 50%;
+            margin-left: 5px;
+        }
+        .comment-count-icon-one {
+            @include comment-icon-styles(#e80015, rgba(232, 0, 21, .18), 2px solid #e80015);
+        }
+        .comment-count-icon-two {
+            @include comment-icon-styles(#1eb45b, rgba(30, 180, 91, .18), 2px solid #1eb45b);
+        }
+        .comment-count-icon-three {
+            @include comment-icon-styles(#ff8d09, rgba(255, 141, 9, .18), 2px solid #ff8d09);
+        }
+        .detractors-color-red {
+            @include detractors-style(#e80015, rgba(232, 0, 21, .18), 4px, 6px);
+        }
+        .detractors-color-green {
+            @include detractors-style(#1eb45b, rgba(30, 180, 91, .18), 4px, 6px);
+        }
+        .detractors-color-orange {
+            @include detractors-style(#ff8d09, rgba(255, 141, 9, .18), 4px, 6px);
+        }
+        .comment-info {
+            text-align: left;
+            .comment-person {
+                @include comment-info-txt(HelveticaFont, 16px);
+                color: #2E384D;
+            }
+            .comment-email {
+                @include comment-info-txt(HelveticaFont, 12px);
+                color: rgb(155, 163, 179);
+                padding-top: 4px;
+            }
+            .comment {
+                @include comment-info-txt(HelveticaFont, 14px);
+                @include comment-style(#2E384D, 8px, 25px);
+            }
+            .comment-status {
+                @include comment-info-txt(HelveticaFont, 12px);
+                @include comment-style(rgb(179, 182, 189), 8px, 25px);
+            }
+            .comment-reply {
+                @include comment-info-txt(HelveticaFont, 12px);
+                @include comment-style(#2E384D, 8px, 25px);
+                &:hover img {
+                    cursor: pointer;
+                }
+                .reply-text {
+                    padding-left: 10px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
